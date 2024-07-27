@@ -1,0 +1,20 @@
+import { Product } from "./Product";
+import { TaxVisitor } from "./TaxVisitor";
+
+class Electronics implements Product {
+    private price: number;
+
+    constructor(price: number) {
+        this.price = price;
+    }
+
+    public getPrice(): number {
+        return this.price;
+    }
+
+    public accept(visitor: TaxVisitor): void {
+        visitor.visitElectronics(this);
+    }
+}
+
+export { Electronics };
