@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Book_1 = require("./Book");
+const Electronics_1 = require("./Electronics");
+const TaxVisitorImpl_1 = require("./TaxVisitorImpl");
+const book = new Book_1.Book(50);
+const electronics = new Electronics_1.Electronics(200);
+const taxVisitor = new TaxVisitorImpl_1.TaxVisitorImpl();
+book.accept(taxVisitor);
+electronics.accept(taxVisitor);
